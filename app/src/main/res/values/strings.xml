@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">coinranking</string>
+    <string name="Coinranking">Coinranking</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="home">Home</string>
+    <string name="exchanges">Exchanges</string>
+    <string name="search">Search</string>
+    <string name="Coin_Ranking">Coin Ranking</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="action_open_drawer">Open</string>
+    <string name="action_close">Close</string>
+    <string name="cryptocurrency">Cryptocurrency</string>
+    <string name="price">Price</string>
+    <string name="market_cap">Market cap</string>
+    <string name="coin_price">$ %.3f</string>
+    <string name="coin_price_to_btc">%.3f BTC</string>
+    <string name="coin_24h_volume">$ %.3f billion</string>
+    <string name="coin_market_cap">$ %.3f billion</string>
+    <string name="coin_description_title_1">What is %s</string>
+    <string name="coin_value_statistics">%s value statistics</string>
+    <string name="coin_percent_change_positive">+%.2f%%</string>
+    <string name="coin_percent_change_negative">%.2f%%</string>
+    <string name="exchange_trade_volume">$ %.2f billion</string>
+    <string name="exchange_markets">%o</string>
+    <string name="cryptocurrencies">Cryptocurrencies</string>
+    <string name="exchange_statistics">%s statistics</string>
+    <string name="exchange_24h_volume">$ %.3f billion</string>
+    <string name="exchange_market_share">%.2f%%</string>
+    <string name="exchange_statistics_description">Statistics showing an overview of %s exchange, such as its 24h trading volume, market share and cryptocurrency listings.</string>
+    <string name="exchange_description_title_1">About %s exchange</string>
+    <string name="exchange_name_exchange">%s exchange</string>
+    <string name="price_to_usd">Price to USD</string>
+    <string name="price_to_btc">Price to BTC</string>
+    <string name="rank">Rank</string>
+    <string name="_24h_volume">24h volume</string>
+    <string name="all_time_high_daily_avg">All-time high (daily avg.)</string>
+    <string name="coin_logo">coin logo</string>
+    <string name="bookmark_button">bookmark button</string>
+    <string name="usd">USD</string>
+    <string name="_24h">24h</string>
+    <string name="exchange_logo">exchange logo</string>
+    <string name="cryptocurrencies_listed">Cryptocurrencies listed</string>
+    <string name="market">Market</string>
+    <string name="market_share">Market share</string>
+    <string name="part_software_group">part software group</string>
+
+    <string-array name="times">
+        <item>3h</item>
+        <item>24h</item>
+        <item>7d</item>
+        <item>30d</item>
+        <item>3m</item>
+        <item>1y</item>
+        <item>3y</item>
+        <item>5y</item>
+    </string-array>
+
+    <string-array name="prices">
+        <item>USD</item>
+        <item>BTC</item>
+        <item>USDT</item>
+    </string-array>
+
+</resources>

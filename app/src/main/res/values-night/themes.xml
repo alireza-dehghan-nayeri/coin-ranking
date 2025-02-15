@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="Theme.MyApp" parent="Base.Theme.MyApp">
+        <item name="colorPrimary">@color/indigo_400</item>
+        <item name="colorPrimaryVariant">@color/blue_dark_chip</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/indigo_700</item>
+        <item name="android:statusBarColor">@color/indigo_700</item>
+        <item name="android:colorBackground">@color/dark_blue_grey_900</item>
+        <item name="colorSurface">@color/dark_blue_grey_900</item>
+        <item name="colorError">@color/red_200</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/blue_50</item>
+        <item name="colorOnSurface">@color/pink_50</item>
+        <item name="colorOnError">@color/black</item>
+    </style>
+</resources>

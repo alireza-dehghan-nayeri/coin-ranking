@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_700">#585858</color>
+    <color name="indigo_400">#6374C3</color>
+    <color name="grey_50">#FCFBFB</color>
+    <color name="blue_grey_900">#2C324B</color>
+    <color name="pink_50">#FDF3FF</color>
+    <color name="blue_50">#ECEFFF</color>
+    <color name="blue_chip">#ecefff</color>
+    <color name="blue_dark_chip">#727daf</color>
+
+    <!--  light  -->
+    <color name="indigo_500">#4557AA</color>
+    <color name="indigo_700">#364694</color>
+    <color name="red_600">#b00020</color>
+    <!--  dark  -->
+    <color name="indigo_200">#A1ABD4</color>
+    <color name="indigo_600">#3F4FA0</color>
+    <color name="red_200">#cf6679</color>
+    <color name="blue_grey_800">#FF1C2449</color>
+    <color name="dark_blue_grey_900">#0D122B</color>
+
+    <!-- divider -->
+    <color name="divider">#14212121</color>
+    <color name="chip">#ecefff</color>
+
+    <!--  crypto percent change color  -->
+    <color name="positive_number">#13b2b2</color>
+    <color name="negative_number">#eb5e2c</color>
+
+
+</resources>

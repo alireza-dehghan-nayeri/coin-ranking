@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coin"
+            type="com.example.coinranking.data.model.Coin" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_coin_logo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="@dimen/spacing_5x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:contentDescription="@string/coin_logo"
+            android:src="@{coin.iconUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_bitcoin" />
+
+        <TextView
+            android:id="@+id/tv_coin_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:text="@{coin.name}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Headline5"
+            app:layout_constraintStart_toEndOf="@+id/iv_coin_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bitcoin" />
+
+        <TextView
+            android:id="@+id/tv_coin_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:text="@{coin.symbol}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Body1"
+            app:layout_constraintStart_toEndOf="@id/iv_coin_logo"
+            app:layout_constraintTop_toBottomOf="@id/tv_coin_name"
+            tools:text="BTC" />
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            android:contentDescription="@string/bookmark_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_bookmark_empty" />
+
+        <TextView
+            android:id="@+id/tv_coin_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:text="@{@string/coin_price(coin.price)}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Headline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_coin_logo"
+            tools:text="$ 2,509.75" />
+
+        <TextView
+            android:id="@+id/tv_coin_percent_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_base"
+            android:text="@{Double.valueOf(coin.change) > 0 ? @string/coin_percent_change_positive(Double.valueOf(coin.change)) : @string/coin_percent_change_negative(Double.valueOf(coin.change))}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Subtitle2"
+            android:textColor="@{Double.valueOf(coin.change) > 0 ? @color/positive_number : @color/negative_number}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_coin_price"
+            tools:text="+9.77%" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_price_type"
+            style="@style/Widget.MyTheme.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_10x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            app:endIconDrawable="@drawable/ic_drop_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_coin_logo">
+
+            <AutoCompleteTextView
+                android:id="@+id/av_price_type_drop_down"
+                style="@style/Widget.MyTheme.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/usd"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_time_filter"
+            style="@style/Widget.MyTheme.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing_10x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:layout_marginEnd="@dimen/spacing_2x"
+            app:endIconDrawable="@drawable/ic_drop_down"
+            app:layout_constraintEnd_toStartOf="@id/et_price_type"
+            app:layout_constraintTop_toBottomOf="@id/iv_coin_logo">
+
+            <AutoCompleteTextView
+                android:id="@+id/av_time_filter_drop_down"
+                style="@style/Widget.MyTheme.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_24h"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_6x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_time_filter" />
+
+        <View
+            android:id="@+id/divider_tab_view_pager"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_tab_view_pager" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

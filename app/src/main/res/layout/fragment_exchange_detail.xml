@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exchange"
+            type="com.example.coinranking.data.model.Exchange" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.exchanges.detail.ExchangeDetailFragment">
+
+        <ImageView
+            android:id="@+id/iv_exchange_logo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="@dimen/spacing_5x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:contentDescription="@string/exchange_logo"
+            android:src="@{exchange.iconUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_binance" />
+
+        <TextView
+            android:id="@+id/tv_exchange_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_5x"
+            android:text="@{@string/exchange_name_exchange(exchange.name)}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Headline5"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_exchange_logo"
+            app:layout_constraintStart_toEndOf="@+id/iv_exchange_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Binance exchange" />
+
+        <TextView
+            android:id="@+id/tv_exchange_trade_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            android:text="@{@string/exchange_24h_volume(Double.valueOf(exchange.volume24h)/1000000000)}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Subtitle1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_exchange_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_exchange_name"
+            tools:text="$ 23.20 billion" />
+
+        <TextView
+            android:id="@+id/tv_exchange_markets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_base"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            android:text="@{@string/exchange_markets(exchange.numberOfMarkets)}"
+            android:textAppearance="@style/TextAppearance.MyTheme.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_exchange_trade_volume"
+            tools:text="987" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginTop="@dimen/spacing_4x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_exchange_markets" />
+
+        <View
+            android:id="@+id/divider_tab_view_pager"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing_4x"
+            android:layout_marginEnd="@dimen/spacing_4x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_tab_view_pager" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

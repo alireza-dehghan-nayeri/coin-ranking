@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.MyApp" parent="Base.Theme.MyApp" />
+
+    <style name="Base.Theme.MyApp" parent="Base.Theme.MaterialThemeBuilder">
+        <!--Colors-->
+        <item name="colorPrimary">@color/indigo_500</item>
+        <item name="colorPrimaryVariant">@color/blue_chip</item>
+        <item name="colorSecondary">@color/indigo_500</item>
+        <item name="colorSecondaryVariant">@color/indigo_700</item>
+        <item name="android:statusBarColor">@color/indigo_700</item>
+        <item name="android:colorBackground">@color/grey_50</item>
+        <item name="colorSurface">@color/grey_50</item>
+        <item name="colorError">@color/red_600</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/grey_700</item>
+        <item name="colorOnSurface">@color/blue_grey_900</item>
+        <item name="colorOnError">@color/white</item>
+        <!--Type-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MyTheme.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MyTheme.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MyTheme.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MyTheme.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MyTheme.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MyTheme.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MyTheme.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MyTheme.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MyTheme.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MyTheme.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MyTheme.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MyTheme.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MyTheme.Overline</item>
+        <!--Shape-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+        <!--Components Styles-->
+        <item name="chipStyle">@style/Widget.MyTheme.Chip.Action</item>
+        <item name="tabStyle">@style/Widget.MyTheme.TabLayout</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.MyTheme.AutoCompleteTextView</item>
+
+    </style>
+
+    <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+
+    </style>
+
+</resources>

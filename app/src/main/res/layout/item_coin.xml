@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="coin"
+            type="com.example.coinranking.data.model.Coin" />
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_2x">
+
+            <ImageView
+                android:id="@+id/iv_coin_logo"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/coin_logo"
+                android:src="@{coin.iconUrl}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_bitcoin" />
+
+            <TextView
+                android:id="@+id/tv_coin_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:text="@{coin.name}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Headline5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_coin_symbol"
+                app:layout_constraintStart_toEndOf="@+id/iv_coin_logo"
+                app:layout_constraintTop_toTopOf="@id/iv_coin_logo"
+                tools:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/tv_coin_symbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:text="@{coin.symbol}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body1"
+                app:layout_constraintBottom_toBottomOf="@id/iv_coin_logo"
+                app:layout_constraintStart_toEndOf="@id/iv_coin_logo"
+                app:layout_constraintTop_toBottomOf="@id/tv_coin_name"
+                tools:text="BTC" />
+
+            <ImageView
+                android:id="@+id/iv_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:contentDescription="@string/bookmark_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_bookmark_filled" />
+
+
+            <TextView
+                android:id="@+id/tv_coin_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/coin_price(coin.price)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Subtitle1"
+                app:layout_constraintBottom_toTopOf="@+id/tv_coin_percent_change"
+                app:layout_constraintEnd_toStartOf="@+id/iv_bookmark"
+                app:layout_constraintTop_toTopOf="@id/iv_bookmark"
+                tools:text="$ 2,509.75" />
+
+            <TextView
+                android:id="@+id/tv_coin_percent_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{Double.valueOf(coin.change) > 0 ? @string/coin_percent_change_positive(Double.valueOf(coin.change)) : @string/coin_percent_change_negative(Double.valueOf(coin.change))}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Subtitle2"
+                android:textColor="@{Double.valueOf(coin.change) > 0 ? @color/positive_number : @color/negative_number}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_bookmark"
+                app:layout_constraintEnd_toStartOf="@+id/iv_bookmark"
+                app:layout_constraintTop_toBottomOf="@id/tv_coin_price"
+                tools:text="+9.77%" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_coin_logo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

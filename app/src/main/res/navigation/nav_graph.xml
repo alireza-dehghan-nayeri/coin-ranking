@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/coinsFragment">
+
+    <fragment
+        android:id="@+id/coinsFragment"
+        android:name="com.example.coinranking.ui.coins.list.CoinsFragment"
+        android:label="@string/Coinranking"
+        tools:layout="@layout/fragment_coins">
+        <action
+            android:id="@+id/action_coinsFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+        <action
+            android:id="@+id/action_coinsFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exchangesFragment"
+        android:name="com.example.coinranking.ui.exchanges.list.ExchangesFragment"
+        android:label="@string/exchanges"
+        tools:layout="@layout/fragment_exchanges" >
+        <action
+            android:id="@+id/action_exchangesFragment_to_exchangeDetailFragment"
+            app:destination="@id/exchangeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarksFragment"
+        android:name="com.example.coinranking.ui.bookmarks.BookmarksFragment"
+        android:label="@string/bookmarks"
+        tools:layout="@layout/fragment_bookmarks" >
+        <action
+            android:id="@+id/action_bookmarksFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.coinranking.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_exchangeDetailFragment"
+            app:destination="@id/exchangeDetailFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.coinranking.ui.entry.SplashFragment"
+        android:label="splash"
+        tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.example.coinranking.ui.coins.detail.CoinDetailFragment"
+        android:label="@string/Coinranking"
+        tools:layout="@layout/fragment_coin_detail">
+        <argument
+            android:name="coin"
+            app:argType="com.example.coinranking.data.model.CoinAndBookmark" />
+        <action
+            android:id="@+id/action_coinDetailFragment_to_exchangeDetailFragment"
+            app:destination="@id/exchangeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exchangeDetailFragment"
+        android:name="com.example.coinranking.ui.exchanges.detail.ExchangeDetailFragment"
+        android:label="@string/Coinranking"
+        tools:layout="@layout/fragment_exchange_detail">
+        <argument
+            android:name="exchange"
+            app:argType="com.example.coinranking.data.model.Exchange" />
+        <action
+            android:id="@+id/action_exchangeDetailFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+</navigation>

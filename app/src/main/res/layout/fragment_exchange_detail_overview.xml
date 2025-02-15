@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exchange"
+            type="com.example.coinranking.data.model.Exchange" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_4x"
+            tools:context=".ui.exchanges.detail.ExchangeDetailOverviewFragment">
+
+            <TextView
+                android:id="@+id/tv_exchange_statistics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/exchange_statistics(exchange.name)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Headline4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Binance statistics" />
+
+            <TextView
+                android:id="@+id/tv_exchange_description1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/exchange_statistics_description(exchange.name)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_exchange_statistics"
+                tools:text="Statistics showing an overview of Binance exchange, such as its 24h trading volume, market share and cryptocurrency listings." />
+
+            <ImageView
+                android:id="@+id/iv_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_6x"
+                android:contentDescription="@string/_24h_volume"
+                android:src="@drawable/ic_volume"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_exchange_description1" />
+
+            <TextView
+                android:id="@+id/tv_volume_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_24h_volume"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_volume"
+                app:layout_constraintStart_toEndOf="@+id/iv_volume"
+                app:layout_constraintTop_toTopOf="@+id/iv_volume" />
+
+            <TextView
+                android:id="@+id/tv_volume_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/exchange_24h_volume(Double.valueOf(exchange.volume24h)/1000000000)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+                app:layout_constraintBottom_toBottomOf="@id/tv_volume_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_volume_text"
+                app:layout_constraintTop_toTopOf="@id/tv_volume_text"
+                tools:text="$ 18.05 billion " />
+
+            <View
+                android:id="@+id/divider_volume"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_base"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_volume" />
+
+            <ImageView
+                android:id="@+id/iv_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:contentDescription="@string/rank"
+                android:src="@drawable/ic_rank"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_volume" />
+
+            <TextView
+                android:id="@+id/tv_rank_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rank"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_rank"
+                app:layout_constraintStart_toEndOf="@+id/iv_rank"
+                app:layout_constraintTop_toTopOf="@+id/iv_rank" />
+
+            <TextView
+                android:id="@+id/tv_rank_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{String.valueOf(exchange.rank)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+                app:layout_constraintBottom_toBottomOf="@id/tv_rank_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_rank_text"
+                app:layout_constraintTop_toTopOf="@id/tv_rank_text"
+                tools:text="1" />
+
+            <View
+                android:id="@+id/divider_rank"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_base"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_rank" />
+
+            <ImageView
+                android:id="@+id/iv_coins_listed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:contentDescription="@string/cryptocurrencies_listed"
+                android:src="@drawable/ic_cryptocurrencies_listed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_rank" />
+
+            <TextView
+                android:id="@+id/tv_coins_listed_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cryptocurrencies_listed"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_coins_listed"
+                app:layout_constraintStart_toEndOf="@+id/iv_coins_listed"
+                app:layout_constraintTop_toTopOf="@+id/iv_coins_listed" />
+
+            <TextView
+                android:id="@+id/tv_coins_listed_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{String.valueOf(exchange.numberOfCoins)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+                app:layout_constraintBottom_toBottomOf="@id/tv_coins_listed_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_coins_listed_text"
+                app:layout_constraintTop_toTopOf="@id/tv_coins_listed_text"
+                tools:text="279" />
+
+            <View
+                android:id="@+id/divider_coins_listed"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_base"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_coins_listed" />
+
+            <ImageView
+                android:id="@+id/iv_market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:contentDescription="@string/market"
+                android:src="@drawable/ic_market"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_coins_listed" />
+
+            <TextView
+                android:id="@+id/tv_market_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/market"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_market"
+                app:layout_constraintStart_toEndOf="@+id/iv_market"
+                app:layout_constraintTop_toTopOf="@+id/iv_market" />
+
+            <TextView
+                android:id="@+id/tv_market_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{String.valueOf(exchange.numberOfMarkets)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+                app:layout_constraintBottom_toBottomOf="@id/tv_market_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_market_text"
+                app:layout_constraintTop_toTopOf="@id/tv_market_text"
+                tools:text="569" />
+
+            <View
+                android:id="@+id/divider_market"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_base"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_market" />
+
+            <ImageView
+                android:id="@+id/iv_market_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:contentDescription="@string/market_share"
+                android:src="@drawable/ic_market_share"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_market" />
+
+            <TextView
+                android:id="@+id/tv_market_share_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/market_share"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_market_share"
+                app:layout_constraintStart_toEndOf="@+id/iv_market_share"
+                app:layout_constraintTop_toTopOf="@+id/iv_market_share" />
+
+            <TextView
+                android:id="@+id/tv_market_share_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/exchange_market_share(Double.valueOf(exchange.marketShare))}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+                app:layout_constraintBottom_toBottomOf="@id/tv_market_share_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_market_share_text"
+                app:layout_constraintTop_toTopOf="@id/tv_market_share_text"
+                tools:text="45.5%" />
+
+            <TextView
+                android:id="@+id/tv_exchange_about"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginTop="@dimen/spacing_9x"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:text="@{@string/exchange_description_title_1(exchange.name)}"
+                android:textAppearance="@style/TextAppearance.MyTheme.Headline4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_market_share"
+                tools:text="About Binance exchange" />
+
+
+            <TextView
+                android:id="@+id/tv_exchange_description2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_4x"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:textAppearance="@style/TextAppearance.MyTheme.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_exchange_about" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  chip  -->
+    <style name="Widget.MyTheme.Chip.Action" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipEndPadding">@dimen/spacing_2x</item>
+        <item name="chipStartPadding">@dimen/spacing_2x</item>
+        <item name="chipMinTouchTargetSize">0dp</item>
+        <item name="chipBackgroundColor">?attr/colorPrimaryVariant</item>
+        <item name="textEndPadding">7dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceCaption</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    <!--  tab  -->
+    <style name="Widget.MyTheme.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorAnimationMode">elastic</item>
+    </style>
+    <!--  text input  -->
+    <style name="Widget.MyTheme.TextInputLayout.OutlinedBox.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">?attr/colorPrimaryVariant</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/spacing_8x</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/spacing_8x</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/spacing_8x</item>
+        <item name="boxCornerRadiusTopStart">@dimen/spacing_8x</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeColor">@null</item>
+        <item name="boxBackgroundMode">filled</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+    <!--  auto complete text view  -->
+    <style name="Widget.MyTheme.AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="background">@null</item>
+        <item name="android:inputType">none</item>
+        <item name="android:paddingTop">@dimen/spacing_base</item>
+        <item name="android:paddingBottom">@dimen/spacing_base</item>
+        <item name="android:textAppearance">?attr/textAppearanceCaption</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:dropDownVerticalOffset">3dp</item>
+    </style>
+</resources>
