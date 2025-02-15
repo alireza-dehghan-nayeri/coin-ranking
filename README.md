@@ -41,12 +41,14 @@ cd coin-ranking
 
 ## 📊 Screenshots
 
+### 🔍 Search Page
+<img src="https://github.com/user-attachments/assets/7c193640-11d4-4b4b-9adb-bfb09eb09bdd" width="300">
 
-![coinranking-search](https://github.com/user-attachments/assets/7c193640-11d4-4b4b-9adb-bfb09eb09bdd)
+### 📜 Coins List
+<img src="https://github.com/user-attachments/assets/5e4dbfe6-7823-4b85-bc1e-f05824e6bfd6" width="300">
 
-![coin-ranking-coins](https://github.com/user-attachments/assets/5e4dbfe6-7823-4b85-bc1e-f05824e6bfd6)
-
-![coin-ranking-bookmarks](https://github.com/user-attachments/assets/2d047d01-4b89-4d1c-9d62-59cc21561d6a)
+### 🔖 Bookmarks
+<img src="https://github.com/user-attachments/assets/2d047d01-4b89-4d1c-9d62-59cc21561d6a" width="300">
 
 
 ---
